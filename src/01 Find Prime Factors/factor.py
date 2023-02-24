@@ -1,12 +1,10 @@
 def get_prime_factors(number):
     factors = []
-    divisor = 2
-    while divisor <= number:
-        if number % divisor == 0:
+    product = 1
+    for divisor in range(2, number + 1):
+        if number % divisor == 0 and product <= number:
             factors.append(divisor)
-            number = number // divisor
-        else:
-            divisor += 1
+            product = product * divisor
     return factors
 
 
